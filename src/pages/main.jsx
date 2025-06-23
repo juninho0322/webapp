@@ -1,9 +1,13 @@
+import Title from "../components/Title";
+
 function Main () {
   return (
     <div>
-      <h1>Welcome to the Main Page</h1>
+      <Title>Welcome to the main page</Title>
       <p>This is the main content of the application.</p>
+
     </div>
   );
 }
 export default Main;
+

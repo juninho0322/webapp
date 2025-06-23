@@ -1,9 +1,14 @@
+import Subtitle from "../components/Subtitle";
+
 function Settings() {
   return (
-    <div className="settings-page">
-      <h1>Settings</h1>
-      <p>This is the settings page.</p>
-      {/* Add your settings components here */}
+    <div>
+      <Subtitle>
+        <h2>Settings Page</h2>
+        <p>Here you can adjust your application settings.</p>
+      <p>More settings will be added soon!</p>
+      </Subtitle>
+
     </div>
   );
 }
