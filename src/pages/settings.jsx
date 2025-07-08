@@ -6,7 +6,7 @@ function Settings() {
       <Subtitle>
         <h2>Settings Page</h2>
         <p>Here you can adjust your application settings.</p>
-      <p>More settings will be added soon!</p>
+        <p>More settings will be added soon!</p>
       </Subtitle>
 
     </div>

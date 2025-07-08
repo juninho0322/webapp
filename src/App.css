@@ -1,15 +1,6 @@
-#root {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-}
 
-.app-layout{
-  display: flex;
-  height: 100vh;
-  
-}
+
+
 
 .menu {
   display: fixed;
@@ -21,12 +12,7 @@
   box-sizing: border-box;
   border-radius: 15px;
 }
-.nav-item{
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  margin-bottom: 10px;
-}
+
 
 .nav-item:hover{
   text-decoration: underline;

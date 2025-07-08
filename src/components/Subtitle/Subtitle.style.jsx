@@ -4,14 +4,13 @@ export const SubtitleStyled = styled.div`
     margin: 0;
     font-size: 2rem;
     color: blue;
-    background: red;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
 
     h2, p {
-      margin: 5px;
+      margin: 2px;
 
     }
 

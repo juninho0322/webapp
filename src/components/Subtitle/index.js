@@ -1,1 +1,1 @@
-export {Subtitle as default} from './Subtitle.jsx';
+export { Subtitle as default } from './Subtitle.jsx';
