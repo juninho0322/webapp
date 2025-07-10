@@ -1,11 +1,11 @@
 import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
-import Main from './pages/main';
-import Settings from './pages/settings';
-import Navbar from './components/Navbar';
+import { Main, Settings } from './pages';
+import Navbar from './components/NavBar/Navbar';
 import DefaultStyles from './components/DefaultStyles';
 import AppWrapper from './components/AppWrapper';
-import { NavbarItemStyled }  from './components/NavbarItem/NavbarItem.style';
-import './App.css'
+import ContentWrapper from './components/ContentWrapper';
+import NavbarItemStyled from './components/NavbarItem';
+
 
 
 function App() {
@@ -16,15 +16,15 @@ function App() {
       <AppWrapper>
         <BrowserRouter>
           <Navbar>
-            <NavbarItemStyled to="./" className='nav-item'>Home</NavbarItemStyled>
-            <Link to="./settings" className='nav-item'>Settings</Link>
+            <NavbarItemStyled to="./">Home</NavbarItemStyled>
+            <NavbarItemStyled to="/settings">Settings</NavbarItemStyled>
           </Navbar>
-          <div className='app-content'>
+          <ContentWrapper>
             <Routes>
               <Route path="/" element={<Main />} />
               <Route path="/settings" element={<Settings />} />
             </Routes>
-          </div>
+          </ContentWrapper>
         </BrowserRouter>
       </AppWrapper>
     </>

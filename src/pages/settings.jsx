@@ -1,7 +1,7 @@
 import Subtitle from "../components/Subtitle";
 
-function Settings() {
-  return (
+export const Settings = () =>
+  (
     <div>
       <Subtitle>
         <h2>Settings Page</h2>
@@ -11,5 +11,5 @@ function Settings() {
 
     </div>
   );
-}
-export default Settings;
+
+

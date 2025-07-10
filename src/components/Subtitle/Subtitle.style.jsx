@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const SubtitleStyled = styled.div`
     margin: 0;
     font-size: 2rem;
-    color: blue;
     display: flex;
     flex-direction: column;
     justify-content: center;

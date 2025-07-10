@@ -6,4 +6,10 @@ export const NavbarItemStyled = styled(Link)`
   color: #fff;
   text-decoration: none;
   margin-bottom: 10px;
+
+
+   &:hover {
+    color: #f0c040;
+  }
+
 `
