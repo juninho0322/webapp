@@ -10,14 +10,25 @@ export const NavbarItemStyled = styled(Link)`
   letter-spacing: -0.14px;
   padding: 10px;
 
-
-
    &:hover {
     color: #1B59F8;
     background-color: #F0F0F9;
     border-radius: 5px;
+
   }
 
 `
+
+export const Icon = styled.img`
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+  vertical-align: middle;
+
+  }
+
+`;
+
+
 
 
