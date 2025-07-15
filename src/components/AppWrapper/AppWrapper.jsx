@@ -5,11 +5,7 @@ import {Container, Row, Col} from "react-grid-system";
 export const AppWrapper = ({ children }) => (
   <Container fluid>
     <Row>
-      <Col sm={12}>
-        <AppWrapperStyled>
-          {children}
-        </AppWrapperStyled>
-      </Col>
+        {children}
     </Row>
   </Container>
 );

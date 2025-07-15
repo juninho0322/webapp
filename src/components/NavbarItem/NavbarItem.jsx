@@ -17,8 +17,6 @@ const iconMap = {
   Activities: ActivitiesIcon,
   "Get Started": Start,
   Settings: Settings,
-
-
 };
 
 export const SectionTitle = ({ children }) => (
@@ -26,7 +24,7 @@ export const SectionTitle = ({ children }) => (
 );
 
 
-export const NavItemWithIcon = ({ to, children }) => {
+export const NavbarItem = ({ to, children }) => {
   const icon = iconMap[children.trim()] || null;
 
   return (
@@ -37,7 +35,7 @@ export const NavItemWithIcon = ({ to, children }) => {
   );
 };
 
-NavItemWithIcon.propTypes = {
+NavbarItem.propTypes = {
   to: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
 };
