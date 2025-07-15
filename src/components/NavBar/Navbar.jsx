@@ -1,10 +1,10 @@
-import { NavBarStyled } from "./NavBar.style";
+import { NavbarStyled } from "./Navbar.style";
 import PropTypes from "prop-types";
 
 const Navbar = ({ children }) => (
-  <NavBarStyled>
+  <NavbarStyled>
     {children}
-  </NavBarStyled>
+  </NavbarStyled>
 );
 Navbar.propTypes = {
   children: PropTypes.node.isRequired,

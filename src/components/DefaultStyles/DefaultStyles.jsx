@@ -13,6 +13,7 @@ export const DefaultStyles = createGlobalStyle`
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 `

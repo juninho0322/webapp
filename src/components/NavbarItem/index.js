@@ -1,2 +1,4 @@
-export { NavbarItemStyled as default } from './NavbarItem.style.jsx';
+
+export { NavItemWithIcon as default} from './NavItemWithIcon.jsx';
+
 

@@ -1,1 +1,1 @@
-export { NavBarStyled as default } from './NavBar.style';
+export { NavbarStyled as default } from './NavBar.style';
