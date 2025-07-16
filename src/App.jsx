@@ -15,7 +15,7 @@ function App() {
     <BrowserRouter>
       <DefaultStyles />
       <AppWrapper>
-          <Col lg={3}>
+          <Col lg={2}>
             <Navbar>
               <SectionTitle>Tesla</SectionTitle>
               <NavbarItem to="./"> Reports</NavbarItem>
@@ -27,7 +27,7 @@ function App() {
               <NavbarItem to="./">Settings</NavbarItem>
             </Navbar>
           </Col>
-          <Col lg={9}>
+          <Col lg={10}>
             <ContentWrapper>
               <Routes>
                 <Route path="/" element={<Main />} />
