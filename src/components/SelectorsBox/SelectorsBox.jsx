@@ -1,5 +1,5 @@
 import { SelectorsBoxStyled } from "./SelectorsBox.style";
-import { Row } from "react-grid-system";
+
 
   export const SelectorsBox = ({ children }) => (
 
@@ -8,6 +8,7 @@ import { Row } from "react-grid-system";
           {children}
         </label>
         <select value="Test" >
+          <option value="role">Select</option>
           <option value="role">Role</option>
           <option value="individual">Individual</option>
           <option value="business">Business</option>

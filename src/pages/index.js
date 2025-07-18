@@ -1,4 +1,4 @@
-export { Main } from './main';
+export { Home } from './home';
 export { Settings} from './settings';
 
 

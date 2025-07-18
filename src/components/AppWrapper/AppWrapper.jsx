@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import {Container, Row, Col} from "react-grid-system";
 
 export const AppWrapper = ({ children }) => (
-  <Container fluid>
+  <AppWrapperStyled fluid>
     <Row>
         {children}
     </Row>
-  </Container>
+  </AppWrapperStyled>
 );
 
 AppWrapper.propTypes = {

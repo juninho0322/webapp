@@ -1,14 +1,10 @@
-import { TitleStyled, TitleLeft, TitleRight, TitleSpan } from './Title.style';
+import { TitleStyled } from './Title.style';
 import PropTypes from 'prop-types';
 
-export const Title = () => (
-  <>
+export const Title = ( { children }) => (
     <TitleStyled>
-      <TitleLeft>Reports</TitleLeft>
-      <TitleRight>Download</TitleRight>
+      {children}
     </TitleStyled>
-    <TitleSpan />
-  </>
 );
 
 Title.propTypes = {

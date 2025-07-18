@@ -1,5 +1,5 @@
 import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
-import { Main, Settings } from './pages';
+import { Home, Settings } from './pages';
 import Navbar from './components/NavBar/Navbar';
 import NavbarItem from './components/NavbarItem';
 import { SectionTitle } from './components/NavbarItem/NavbarItem';
@@ -7,6 +7,9 @@ import DefaultStyles from './components/DefaultStyles';
 import AppWrapper from './components/AppWrapper';
 import ContentWrapper from './components/ContentWrapper';
 import { Col } from 'react-grid-system';
+import { Icon } from './components/Icon/Icon';
+
+import { faFileAlt, faBook, faUsers, faChartBar, faRocket, faCog } from '@fortawesome/free-solid-svg-icons';
 
 
 function App() {
@@ -15,22 +18,25 @@ function App() {
     <BrowserRouter>
       <DefaultStyles />
       <AppWrapper>
-          <Col lg={2}>
+          <Col xs={12} lg={3}>
             <Navbar>
-              <SectionTitle>Tesla</SectionTitle>
-              <NavbarItem to="./"> Reports</NavbarItem>
-              <NavbarItem to="/settings">Library</NavbarItem>
-              <NavbarItem to="./">People</NavbarItem>
-              <NavbarItem to="./">Activities</NavbarItem>
+              <SectionTitle>
+                <img src="src/assets/icons/Tesla.png" alt="Logo" width="100" />
+              </SectionTitle>
+              <NavbarItem to="./" icon={faFileAlt}> Reports</NavbarItem>
+              <NavbarItem to="/settings" icon={faBook}>Library</NavbarItem>
+              <NavbarItem to="./" icon={faUsers}>People</NavbarItem>
+              <NavbarItem to="./" icon={faChartBar}>Activities</NavbarItem>
               <SectionTitle>Support</SectionTitle>
-              <NavbarItem to="./">Get Started</NavbarItem>
-              <NavbarItem to="./">Settings</NavbarItem>
+              <NavbarItem to="./" icon={faRocket}>Get Started</NavbarItem>
+              <NavbarItem to="./" icon={faCog}>Settings</NavbarItem>
+              <SectionTitle>FAQ</SectionTitle>
             </Navbar>
           </Col>
-          <Col lg={10}>
+          <Col lg={9}>
             <ContentWrapper>
               <Routes>
-                <Route path="/" element={<Main />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/settings" element={<Settings />} />
               </Routes>
             </ContentWrapper>
