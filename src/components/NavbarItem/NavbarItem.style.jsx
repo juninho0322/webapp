@@ -22,14 +22,6 @@ export const NavbarItemStyled = styled(Link)`
 
 `
 
-export const SectionTitleStyled = styled.p`
-    @media (max-width: 991px) {
-    display: none;
-
-  }
-
-;`
-
 
 
 

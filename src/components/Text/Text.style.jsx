@@ -15,7 +15,7 @@ const alignText = {
 const colorText = {
   primary: "#000",
   secondary: "#555",
-  tertiary: "#888",
+  tertiary: "#1B59F8",
 };
 
 const fontFamily = {

@@ -1,15 +1,16 @@
 import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
 import { Home, Settings } from './pages';
+import { Col } from 'react-grid-system';
+import { faFileAlt, faBook, faUsers, faChartBar, faRocket, faCog } from '@fortawesome/free-solid-svg-icons';
+import Text  from './components/Text';
+import { Img } from './components/Img/Img';
 import Navbar from './components/NavBar/Navbar';
 import NavbarItem from './components/NavbarItem';
-import { SectionTitle } from './components/NavbarItem/NavbarItem';
 import DefaultStyles from './components/DefaultStyles';
 import AppWrapper from './components/AppWrapper';
 import ContentWrapper from './components/ContentWrapper';
-import { Col } from 'react-grid-system';
-import { Icon } from './components/Icon/Icon';
+import LogoTesla from './assets/icons/Tesla.png';
 
-import { faFileAlt, faBook, faUsers, faChartBar, faRocket, faCog } from '@fortawesome/free-solid-svg-icons';
 
 
 function App() {
@@ -20,17 +21,16 @@ function App() {
       <AppWrapper>
           <Col xs={12} lg={3}>
             <Navbar>
-              <SectionTitle>
-                <img src="src/assets/icons/Tesla.png" alt="Logo" width="100" />
-              </SectionTitle>
+              <Img src={LogoTesla} alt="Test Logo" width="100" marginbottom="30px" >
+              </Img>
               <NavbarItem to="./" icon={faFileAlt}> Reports</NavbarItem>
               <NavbarItem to="/settings" icon={faBook}>Library</NavbarItem>
               <NavbarItem to="./" icon={faUsers}>People</NavbarItem>
               <NavbarItem to="./" icon={faChartBar}>Activities</NavbarItem>
-              <SectionTitle>Support</SectionTitle>
+              <Text>Support</Text>
               <NavbarItem to="./" icon={faRocket}>Get Started</NavbarItem>
               <NavbarItem to="./" icon={faCog}>Settings</NavbarItem>
-              <SectionTitle>FAQ</SectionTitle>
+              <Text>FAQ</Text>
             </Navbar>
           </Col>
           <Col lg={9}>

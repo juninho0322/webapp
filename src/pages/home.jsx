@@ -1,6 +1,6 @@
 import { Col, Row } from "react-grid-system";
 import Title from "../components/Title";
-import { Text } from "../components/Text";
+import Text from "../components/Text";
 import { SelectorsBox } from "../components/SelectorsBox";
 import { Icon } from "../components/Icon";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";

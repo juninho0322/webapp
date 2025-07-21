@@ -4,12 +4,9 @@ export const NavbarStyled = styled.nav`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 100%;
-  background-color:#fff;
-  color: #4D4D4D;
   padding: 20px ;
   box-sizing: border-box;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
 
   @media (max-width: 991px) {
