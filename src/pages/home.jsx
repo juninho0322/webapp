@@ -17,7 +17,7 @@ export const Home = () => (
         </Col>
         <Col sm={6} >
           <Text size="small" align="right" color="primary">
-            <Icon icon={faDownload} margin={"10px"}/>
+            <Icon icon={faDownload} marginright="5px"/>
             Download
           </Text>
         </Col>

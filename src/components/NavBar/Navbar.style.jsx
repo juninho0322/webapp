@@ -9,6 +9,7 @@ export const NavbarStyled = styled.nav`
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
 
+
   @media (max-width: 991px) {
     flex-direction: row; /* Row on mobile */
     height: auto;        /* Prevent full height on small screens */
@@ -16,5 +17,6 @@ export const NavbarStyled = styled.nav`
     padding: 10px;
     justify-content: space-between; /* Space items evenly */
     align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Add margin at the bottom */
 }
 `

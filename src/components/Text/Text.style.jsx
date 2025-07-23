@@ -24,9 +24,9 @@ const fontFamily = {
 }
 
 export const TextStyled = styled.p`
-    font-family: ${({ family }) => fontFamily[family] || fontFamily.primary};
-    font-size: ${({ size }) => fontSize[size] || fontSize.medium};
-    text-align: ${({ align }) => alignText[align] || "left"};
-    color: ${({ color }) => colorText[color] || "#000"};
+    font-family: ${({ $family }) => fontFamily[$family] || fontFamily.primary};
+    font-size: ${({ $size }) => fontSize[$size] || fontSize.medium};
+    text-align: ${({ $align }) => alignText[$align] || "left"};
+    color: ${({ $color }) => colorText[$color] || "#000"};
 
 `

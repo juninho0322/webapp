@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { IconStyled } from "./Icon.style";
 
-export const Icon = ({ icon, color, size, margin }) => (
-  <IconStyled icon={icon} color={color} size={size} margin={margin} />
+export const Icon = ({ icon, marginright }) => (
+  <IconStyled icon={icon} $marginright={marginright}/>
 );
 
 Icon.propTypes = {

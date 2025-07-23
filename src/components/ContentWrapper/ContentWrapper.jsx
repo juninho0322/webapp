@@ -2,8 +2,8 @@ import { ContentWrapperStyled } from "./ContentWrapper.style";
 import PropTypes from 'prop-types';
 
 
-export const ContentWrapper = ({ children }) => (
-  <ContentWrapperStyled>
+export const ContentWrapper = ({ children, padding}) => (
+  <ContentWrapperStyled $padding={padding} nogutter>
     {children}
   </ContentWrapperStyled>
 );
