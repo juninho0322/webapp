@@ -10,5 +10,6 @@ export const ContentWrapper = ({ children, padding}) => (
 
 ContentWrapper.propTypes = {
   children: PropTypes.node.isRequired,
+  padding: PropTypes.string,
 };
 

@@ -7,7 +7,6 @@ import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { Divider }  from "../components/Divider";
 
 
-
 export const Home = () => (
   <>
     <Col sm={12}>
@@ -25,22 +24,24 @@ export const Home = () => (
       <Divider />
     </Col>
 
-    <Col sm={4} >
-      <SelectorsBox>
-        Timeframe:
-      </SelectorsBox>
-    </Col>
-
-    <Col sm={4} >
-      <SelectorsBox>
-        People:
-      </SelectorsBox>
-    </Col>
-
-    <Col sm={4} >
-      <SelectorsBox>
-        Topic:
-      </SelectorsBox>
+    <Col sm={12}>
+    <Row >
+      <Col sm={4} >
+        <SelectorsBox>
+          Timeframe:
+        </SelectorsBox>
+      </Col>
+      <Col sm={4} >
+        <SelectorsBox>
+          People:
+        </SelectorsBox>
+      </Col>
+      <Col sm={4} >
+        <SelectorsBox>
+          Topic:
+        </SelectorsBox>
+      </Col>
+      </Row>
     </Col>
 
     <Col sm={6}>

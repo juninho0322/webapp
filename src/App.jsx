@@ -1,9 +1,9 @@
 import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
-import { Home, Settings } from './pages';
+import { Home, Forms } from './pages';
 import { Col, Hidden } from 'react-grid-system';
 import { faFileAlt, faBook, faUsers, faChartBar, faRocket, faCog } from '@fortawesome/free-solid-svg-icons';
 import Text  from './components/Text';
-import { Img } from './components/Img/Img';
+import { Image } from './components/Image/Image';
 import Navbar from './components/NavBar/Navbar';
 import NavbarItem from './components/NavbarItem';
 import DefaultStyles from './components/DefaultStyles';
@@ -22,10 +22,10 @@ function App() {
           <Col xs={12} lg={3}>
             <Navbar>
               <Hidden sm md>
-                <Img src={LogoTesla} alt="Test Logo" width="100" marginbottom="30px" />
+                <Image src={LogoTesla} alt="Test Logo"  width="100px" marginbottom="30px" />
               </Hidden>
               <NavbarItem to="./" icon={faFileAlt}> Reports</NavbarItem>
-              <NavbarItem to="/settings" icon={faBook}>Library</NavbarItem>
+              <NavbarItem to="/forms" icon={faBook}>Forms</NavbarItem>
               <NavbarItem to="./" icon={faUsers}>People</NavbarItem>
               <NavbarItem to="./" icon={faChartBar}>Activities</NavbarItem>
               <Hidden md sm>
@@ -39,10 +39,10 @@ function App() {
             </Navbar>
           </Col>
           <Col lg={9}>
-            <ContentWrapper padding="0 15px 0 15px" nogutter>
+            <ContentWrapper padding="0 15px 0 15px">
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/settings" element={<Settings />} />
+                <Route path="/forms" element={<Forms />} />
               </Routes>
             </ContentWrapper>
           </Col>

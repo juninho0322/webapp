@@ -1,13 +1,12 @@
 import PropTypes from "prop-types";
 import { IconStyled } from "./Icon.style";
 
-export const Icon = ({ icon, marginright }) => (
-  <IconStyled icon={icon} $marginright={marginright}/>
+export const Icon = ({ icon, marginright, marginleft }) => (
+  <IconStyled icon={icon} $marginright={marginright} $marginleft={marginleft}/>
 );
 
 Icon.propTypes = {
   icon: PropTypes.object.isRequired,
-  color: PropTypes.string,
-  fontSize: PropTypes.string,
-  margin: PropTypes.string,
+  marginright: PropTypes.string,
+  marginleft: PropTypes.string,
 };
