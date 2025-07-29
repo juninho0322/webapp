@@ -1,1 +1,1 @@
-export { Text as default } from './Text.jsx';
+export { Text as default } from './Text';

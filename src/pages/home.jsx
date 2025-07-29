@@ -4,7 +4,7 @@ import Text from "../components/Text";
 import { SelectorsBox } from "../components/SelectorsBox";
 import { Icon } from "../components/Icon";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import { Divider }  from "../components/Divider";
+import  Divider  from "../components/Divider";
 
 
 export const Home = () => (

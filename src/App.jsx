@@ -1,9 +1,9 @@
 import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
-import { Home, Forms } from './pages';
+import { Home, Form } from './pages';
 import { Col, Hidden } from 'react-grid-system';
 import { faFileAlt, faBook, faUsers, faChartBar, faRocket, faCog } from '@fortawesome/free-solid-svg-icons';
-import Text  from './components/Text';
-import { Image } from './components/Image/Image';
+import Text from './components/Text';
+import Image from './components/Image';
 import Navbar from './components/NavBar/Navbar';
 import NavbarItem from './components/NavbarItem';
 import DefaultStyles from './components/DefaultStyles';
@@ -42,7 +42,7 @@ function App() {
             <ContentWrapper padding="0 15px 0 15px">
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/forms" element={<Forms />} />
+                <Route path="/forms" element={<Form />} />
               </Routes>
             </ContentWrapper>
           </Col>

@@ -1,4 +1,4 @@
 export { Home } from './home';
-export { Forms} from './clientform';
+export { Form } from './form';
 
 
