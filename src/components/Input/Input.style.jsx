@@ -1,16 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const InputWrapper = styled.div`
-  height: 100%; /* or a fixed height like 100vh if it's the full screen */
-  display: flex;
-  align-items: center;   /* vertical centering */
-  justify-content: center; /* horizontal centering */
-  position: relative;
-  margin-bottom: 1.5rem;
-
+const floatingLabelStyles = css`
+  top: -0.25rem;
+  font-size: 0.75rem;
+  color: #007bff;
 `;
 
-export const StyledInput = styled.input`
+export const InputStyled = styled.input`
   width: 100%;
   padding: 1rem 0.5rem;
   font-size: 1rem;
@@ -22,16 +18,36 @@ export const StyledInput = styled.input`
     outline: none;
     border-color: #007bff;
   }
+
+
+  /* Autofill styles to float label */
+  &:-webkit-autofill {
+    background-color: white;
+    transition: background-color 9999s ease-out 0s;
+  }
+
+  &:-webkit-autofill ~ label {
+    ${floatingLabelStyles}
+  }
 `;
 
-export const StyledLabel = styled.label`
+export const DivWrapper = styled.div`
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 1.5rem;
+`;
+
+
+export const LabelStyled = styled.label`
   position: absolute;
-  top: ${({ isFloating }) => (isFloating ? '-0.25rem' : '1.6em')};
   left: 0.50rem;
-  font-size: ${({ isFloating }) => (isFloating ? '0.75rem' : '1rem')};
-  color: ${({ isFloating }) => (isFloating ? '#007bff' : '#666')};
   background: white;
   padding: 0 0.25rem;
   transition: all 0.2s ease;
   pointer-events: none;
-  `
+  color: #4D4D4D;
+  ${({ $isFloating }) => $isFloating && floatingLabelStyles}
+  `;
+

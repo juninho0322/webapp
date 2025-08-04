@@ -1,5 +1,6 @@
 import { NavbarStyled } from "./Navbar.style";
 import PropTypes from "prop-types";
+import { NavbarItem } from "./NavbarItem/NavbarItem"
 
 const Navbar = ({ children }) => (
   <NavbarStyled>
@@ -9,5 +10,7 @@ const Navbar = ({ children }) => (
 Navbar.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+Navbar.NavbarItem = NavbarItem
 
 export default Navbar;

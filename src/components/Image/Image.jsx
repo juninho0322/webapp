@@ -1,9 +1,9 @@
-import { ImgageStyled } from "./Image.style";
+import { ImageStyled } from "./Image.style";
 import PropTypes from "prop-types";
 
 
 export const Image = ({ padding, marginbottom, width, src, alt }) => (
-  <ImgageStyled  $padding={padding} $marginbottom={marginbottom} $width={width} src={src} alt={alt}/>
+  <ImageStyled  $padding={padding} $marginbottom={marginbottom} $width={width} src={src} alt={alt}/>
 );
 
 Image.defaultProps = {

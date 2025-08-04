@@ -5,7 +5,6 @@ import { faFileAlt, faBook, faUsers, faChartBar, faRocket, faCog } from '@fortaw
 import Text from './components/Text';
 import Image from './components/Image';
 import Navbar from './components/NavBar/Navbar';
-import NavbarItem from './components/NavbarItem';
 import DefaultStyles from './components/DefaultStyles';
 import AppWrapper from './components/AppWrapper';
 import ContentWrapper from './components/ContentWrapper';
@@ -24,15 +23,15 @@ function App() {
               <Hidden sm md>
                 <Image src={LogoTesla} alt="Test Logo"  width="100px" marginbottom="30px" />
               </Hidden>
-              <NavbarItem to="./" icon={faFileAlt}> Reports</NavbarItem>
-              <NavbarItem to="/forms" icon={faBook}>Forms</NavbarItem>
-              <NavbarItem to="./" icon={faUsers}>People</NavbarItem>
-              <NavbarItem to="./" icon={faChartBar}>Activities</NavbarItem>
+              <Navbar.NavbarItem to="./" icon={faFileAlt}> Reports</Navbar.NavbarItem>
+              <Navbar.NavbarItem to="/forms" icon={faBook}>Forms</Navbar.NavbarItem>
+              <Navbar.NavbarItem to="./" icon={faUsers}>People</Navbar.NavbarItem>
+              <Navbar.NavbarItem to="./" icon={faChartBar}>Activities</Navbar.NavbarItem>
               <Hidden md sm>
                 <Text>Support</Text>
               </Hidden>
-              <NavbarItem to="./" icon={faRocket}>Get Started</NavbarItem>
-              <NavbarItem to="./" icon={faCog}>Settings</NavbarItem>
+              <Navbar.NavbarItem to="./" icon={faRocket}>Get Started</Navbar.NavbarItem>
+              <Navbar.NavbarItem to="./" icon={faCog}>Settings</Navbar.NavbarItem>
               <Hidden sm md>
                 <Text>FAQ</Text>
               </Hidden>
