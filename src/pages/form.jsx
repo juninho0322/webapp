@@ -15,32 +15,85 @@ export const Form = (props) => {
    const [formData, setFormData] = useState({
     name: '',
     middle: '',
+    surname:'',
   });
 
   const [validation, setValidation] = useState({
   name: null,
   middle: null,
+  surname: null,
 });
 
-function validateMinLength(field, value, minLength = 3) {
-  const isValid = value.trim().length >= minLength;
+const [errors, setErrors] = useState({
+  name: '',
+  middle: '',
+  surname:'',
+});
+
+
+//validate name
+function validateName(field, value) {
+  const trimmed = value.trim();
+  const isValid = trimmed.length >= 3;
+
   setValidation((prev) => ({
     ...prev,
-    [field]: isValid,
+    [field]: trimmed === '' ? null : isValid,
+  }));
+
+  setErrors((prev) => ({
+    ...prev,
+    [field]:
+      trimmed === ''
+        ? ''
+        : !isValid
+        ? 'Name must be at least 3 characters'
+        : '',
   }));
 }
 
-function handleNameChange(e) {
-  changeHandler(e);
-  validateMinLength(e.target.name, e.target.value);
+//validate middle and surname
+function validateSurname(field, value) {
+  const trimmed = value.trim();
+  const minLengthValid = trimmed.length >= 5;
+  const lettersOnlyValid = /^[A-Za-z\s]+$/.test(trimmed);
+  const isValid = minLengthValid && lettersOnlyValid;
+
+  setValidation((prev) => ({
+    ...prev,
+    [field]: trimmed === '' ? null : isValid,
+  }));
+
+  setErrors((prev) => ({
+    ...prev,
+    [field]:
+      trimmed === ''
+        ? ''
+        : !minLengthValid
+        ? 'Surname must be at least 5 characters'
+        : !lettersOnlyValid
+        ? 'Surname must contain only letters'
+        : '',
+  }));
 }
 
 
 
-  function changeHandler(e) {
-    setFormData({...formData, [e.target.name]: e.target.value});
-    console.log(e.target.name, e.target.value)
+function changeHandler(e) {
+  const { name, value } = e.target;
+
+  setFormData((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
+
+  if (name === 'name') {
+    validateName(name, value);
+  } else if (name === 'middle' || name === 'surname') {
+    validateSurname(name, value);
+  }
 }
+
 
   function submitHandler(e){
     e.preventDefault();
@@ -68,10 +121,24 @@ function handleNameChange(e) {
         <Col lg={10}>
           <Row>
             <Col md={4}>
-              <Input label="Name" name="name" value={formData.name} onChange={handleNameChange} isValid={validation.name}/>
+              <Input
+              label="Name"
+              name="name"
+              value={formData.name}
+              onChange={changeHandler}
+              isValid={validation.name}
+              errorMsg={errors.name}
+              />
             </Col>
             <Col md={4}>
-              <Input label="Middle" name="middle" value={formData.middle} onChange={changeHandler} isValid={true}/>
+              <Input
+                label="Middle"
+                name="middle"
+                value={formData.middle}
+                onChange={changeHandler}
+                isValid={validation.middle}
+                errorMsg={errors.middle}
+                />
             </Col>
             <Col md={4}>
               <Input label="Surname"/>

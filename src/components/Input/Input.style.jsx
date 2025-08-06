@@ -10,14 +10,18 @@ export const InputStyled = styled.input`
   width: 100%;
   padding: 1rem 0 1rem 0.25rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid
+   ${({ $isValid }) =>
+      $isValid === false ? 'red' :
+      $isValid === true ? 'green' : '#ccc'};
   border-radius: 4px;
   background: white;
 
 
-  &:focus {
+   &:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: ${({ $isValid }) =>
+      $isValid === false ? '#007bff' : '#red'};
   }
 
 
@@ -67,7 +71,7 @@ export const SpanStyled = styled.span`
   position: absolute;
   font-size: 0.875rem;
   left: 0;
-  color:  ${({ $isValid }) =>
-    $isValid === false ? 'red' : $isValid === true ? 'green' : '#ccc'};
+  color: red;
+  padding: 0.25rem;
+`;
 
-`

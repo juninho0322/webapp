@@ -7,7 +7,7 @@ import { InputStyled, DivWrapper, LabelStyled, SpanStyled, DivSpanStyled } from 
 
 
 
-export const Input = ({ label, id, type = "text", value, name, onChange, isValid}) => {
+export const Input = ({ label, id, type = "text", value, name, onChange, isValid, errorMsg}) => {
   const [isFocused, setIsFocused] = useState(false);
 
 
@@ -21,6 +21,8 @@ export const Input = ({ label, id, type = "text", value, name, onChange, isValid
         onChange={onChange}
         value={value}
         name={name}
+        $isValid={isValid}
+
       />
 
       <LabelStyled $isFloating={isFocused}>
@@ -28,7 +30,7 @@ export const Input = ({ label, id, type = "text", value, name, onChange, isValid
       </LabelStyled>
 
       <DivSpanStyled>
-      {isValid === false && <SpanStyled $isValid={isValid}>Juninho</SpanStyled>}
+      {isValid === false && <SpanStyled $isValid={isValid}>{errorMsg}</SpanStyled>}
       </DivSpanStyled>
     </DivWrapper>
   );
