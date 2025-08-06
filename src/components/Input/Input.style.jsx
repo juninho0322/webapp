@@ -8,11 +8,12 @@ const floatingLabelStyles = css`
 
 export const InputStyled = styled.input`
   width: 100%;
-  padding: 1rem 0.5rem;
+  padding: 1rem 0 1rem 0.25rem;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   background: white;
+
 
   &:focus {
     outline: none;
@@ -29,20 +30,26 @@ export const InputStyled = styled.input`
   &:-webkit-autofill ~ label {
     ${floatingLabelStyles}
   }
+
+
 `;
 
 export const DivWrapper = styled.div`
     height: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     position: relative;
     margin-bottom: 1.5rem;
+    padding-bottom: ${({ $paddingbottom }) => $paddingbottom} ;
 `;
 
 
 export const LabelStyled = styled.label`
   position: absolute;
   left: 0.50rem;
+  top: ${({ $labelTop }) => $labelTop || "1.75rem" };
   background: white;
   padding: 0 0.25rem;
   transition: all 0.2s ease;
@@ -51,3 +58,16 @@ export const LabelStyled = styled.label`
   ${({ $isFloating }) => $isFloating && floatingLabelStyles}
   `;
 
+ export const DivSpanStyled = styled.div`
+  padding-top: 0.25rem;
+
+ `
+
+export const SpanStyled = styled.span`
+  position: absolute;
+  font-size: 0.875rem;
+  left: 0;
+  color:  ${({ $isValid }) =>
+    $isValid === false ? 'red' : $isValid === true ? 'green' : '#ccc'};
+
+`
