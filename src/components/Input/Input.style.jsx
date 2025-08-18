@@ -1,4 +1,11 @@
 import styled, { css } from 'styled-components';
+import { Col } from 'react-grid-system'
+
+export const ColStyled = styled(Col)`
+  border-right: groove 2px;
+  margin: 1rem 0;
+
+`
 
 const floatingLabelStyles = css`
   top: -0.25rem;

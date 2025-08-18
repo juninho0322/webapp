@@ -4,6 +4,8 @@ import Text from "../components/Text";
 import Divider from "../components/Divider";
 import Input from "../components/Input"
 import { useState } from "react";
+import { validateName, validateSurname } from "../utils/validators"
+import { ColStyled } from "../components/Input/Input.style";
 // import { useEffect, useState } from "react";
 // import fakeApi from "../../data/api";
 
@@ -12,7 +14,7 @@ import { useState } from "react";
 
 export const Form = (props) => {
 
-   const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     name: '',
     middle: '',
     surname:'',
@@ -22,61 +24,13 @@ export const Form = (props) => {
   name: null,
   middle: null,
   surname: null,
-});
+  });
 
 const [errors, setErrors] = useState({
   name: '',
   middle: '',
   surname:'',
-});
-
-
-//validate name
-function validateName(field, value) {
-  const trimmed = value.trim();
-  const isValid = trimmed.length >= 3;
-
-  setValidation((prev) => ({
-    ...prev,
-    [field]: trimmed === '' ? null : isValid,
-  }));
-
-  setErrors((prev) => ({
-    ...prev,
-    [field]:
-      trimmed === ''
-        ? ''
-        : !isValid
-        ? 'Name must be at least 3 characters'
-        : '',
-  }));
-}
-
-//validate middle and surname
-function validateSurname(field, value) {
-  const trimmed = value.trim();
-  const minLengthValid = trimmed.length >= 5;
-  const lettersOnlyValid = /^[A-Za-z\s]+$/.test(trimmed);
-  const isValid = minLengthValid && lettersOnlyValid;
-
-  setValidation((prev) => ({
-    ...prev,
-    [field]: trimmed === '' ? null : isValid,
-  }));
-
-  setErrors((prev) => ({
-    ...prev,
-    [field]:
-      trimmed === ''
-        ? ''
-        : !minLengthValid
-        ? 'Surname must be at least 5 characters'
-        : !lettersOnlyValid
-        ? 'Surname must contain only letters'
-        : '',
-  }));
-}
-
+  });
 
 
 function changeHandler(e) {
@@ -88,9 +42,52 @@ function changeHandler(e) {
   }));
 
   if (name === 'name') {
-    validateName(name, value);
+    const { isValid, trimmed } = validateName(value);
+
+  setValidation((prev) => {
+    console.log(prev);
+    console.log(name, value, isValid);
+    return {...prev,
+    [name]: trimmed === '' ? null : isValid,
+  }});
+
+
+  setErrors((prev) => ({
+    ...prev,
+    [name]:
+      trimmed === ''
+        ? ''
+        : !isValid
+        ? 'Name must be at least 3 characters'
+        : '',
+  }));
+
+
   } else if (name === 'middle' || name === 'surname') {
-    validateSurname(name, value);
+
+    const { isValid, trimmed, minLengthValid, lettersOnlyValid } = validateSurname(value);
+
+    setValidation((prev) => {
+     console.log(prev);
+     console.log(name, trimmed, isValid);
+    return {
+      ...prev,
+    [name]: trimmed === '' ? null : isValid,
+    }
+
+  });
+
+  setErrors((prev) => ({
+    ...prev,
+    [name]:
+      trimmed === ''
+        ? ''
+        : !minLengthValid
+        ? 'Surname must be at least 5 characters'
+        : !lettersOnlyValid
+        ? 'Surname must contain only letters'
+        : '',
+  }));
   }
 }
 
@@ -112,12 +109,12 @@ function changeHandler(e) {
 
   return (
   <Col>
-       <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler}>
       <Row align="center">
-        <Col lg={2}>
+        <ColStyled lg={2}>
           <Title>Client</Title>
           <Text size="small">Fields for client</Text>
-        </Col>
+        </ColStyled>
         <Col lg={10}>
           <Row>
             <Col md={4}>
@@ -141,7 +138,14 @@ function changeHandler(e) {
                 />
             </Col>
             <Col md={4}>
-              <Input label="Surname"/>
+              <Input
+                label="Surname"
+                name="surname"
+                value={formData.surname}
+                onChange={changeHandler}
+                isValid={validation.surname}
+                errorMsg={errors.surname}
+                />
             </Col>
           </Row>
         </Col>
@@ -149,10 +153,10 @@ function changeHandler(e) {
     <Divider/>
 
       <Row align="center">
-        <Col lg={2}>
+        <ColStyled lg={2}>
           <Title>Address</Title>
           <Text size="small">Fields for address</Text>
-        </Col>
+        </ColStyled>
         <Col lg={10}>
          <Row>
             <Col md={4}>
@@ -171,10 +175,10 @@ function changeHandler(e) {
 
 
       <Row align="center">
-        <Col lg={2}>
+        <ColStyled lg={2}>
           <Title>Contact</Title>
           <Text size="small">Fields for contact</Text>
-        </Col>
+        </ColStyled>
         <Col lg={10}>
          <Row>
             <Col md={6}>
@@ -189,10 +193,10 @@ function changeHandler(e) {
       <Divider/>
 
       <Row align="center">
-        <Col lg={2}>
+        <ColStyled lg={2}>
           <Title>Message</Title>
           <Text size="small">Leave us a message</Text>
-        </Col>
+        </ColStyled>
         <Col lg={10}>
          <Row>
             <Col md={12}>
