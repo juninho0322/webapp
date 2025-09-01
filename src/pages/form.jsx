@@ -94,12 +94,13 @@ function changeHandler(e) {
 
   function submitHandler(e){
     e.preventDefault();
-    props.onAdd(formData)
+    props.onSubmit({firstName: formData.name});
     setFormData({
       name: '',
       middle: '',
     });
-  }
+   }
+
 
   // useEffect( async () => {
   //   const test = await fakeApi();
@@ -206,6 +207,7 @@ function changeHandler(e) {
         </Col>
       </Row>
       <Divider/>
+      <button type="submit">Submit</button>
     </form>
   </Col>
 );
